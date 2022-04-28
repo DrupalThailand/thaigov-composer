@@ -137,3 +137,5 @@ certificates/
 # BLT 11.2.0 update to support simulated deploys
 /travis_wait*
 
+/.editorconfig
+/.gitattributes
