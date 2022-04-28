@@ -1,2 +1,2 @@
-# thaigov-composer
-user composer
+### ThaiGov project installation.
+use `composer create-project drupalthaiload/thaigov-composer`
