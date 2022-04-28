@@ -1,49 +1,139 @@
-# gitignore template for Drupal 8 projects
-#
-# earlier versions of Drupal are tracked in `community/PHP/`
+# Ignore configuration files that may contain sensitive information.
+local.settings.php
+local.drush.yml
+local.site.yml
+local.services.yml
+tests/behat/local.yml
+box/local.config.yml
+*.local
+local.blt.yml
+web/sites/default/settings.php
 
-# Ignore configuration files that may contain sensitive information
-/sites/*/*settings*.php
-/sites/*/*services*.yml
+# Ignore drupal core.
+web/core
 
-# Ignore paths that may contain user-generated content
-/sites/*/files
-/sites/*/public
-/sites/*/private
-/sites/*/files-public
-/sites/*/files-private
+# Ignore paths that contain user-generated content.
+web/sites/*/files
+/files-private
+web/sites/*/private
 
-# Ignore paths that may contain temporary files
-/sites/*/translations
-/sites/*/tmp
-/sites/*/cache
+# Ignore contrib modules. These should be created during build process.
+web/modules/contrib
+web/themes/contrib
+web/profiles/contrib
+web/libraries
 
-# Ignore testing related files
-/sites/simpletest
+# Ignore build artifacts
+deployment_identifier
+/deploy
+bin/*
+tmp
+reports
 
-# Ignore drupal core (if not versioning drupal sources)
-/core
-/modules/README.txt
-/profiles/README.txt
-/sites/README.txt
-/sites/example.sites.php
-/sites/example.settings.local.php
-/sites/development.services.yml
-/themes/README.txt
-/vendor
-/.csslintrc
-/.editorconfig
-/.eslintignore
-/.eslintrc.json
-/.gitattributes
-/.htaccess
-/autoload.php
-/composer.json
-/composer.lock
-/example.gitignore
-/index.php
-/LICENSE.txt
-/README.txt
-/robots.txt
-/update.php
-/web.config
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpathk
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# User-specific stuff:
+.idea/
+.vscode/
+
+#XHProf
+xhprof_*
+
+#Composer vendor
+/vendor/
+/vendor/.git
+
+#Sass
+.sass-cache
+*.css.map
+
+#Netbeans IDE
+nbproject
+nbproject/*
+
+# DrupalVM
+.vagrant/
+
+# DevDesktop
+*.dd
+
+#Exports
+*.gz
+*.sql
+*.zip
+
+# PHPStorm
+atlassian-ide-plugin.xml
+
+#NPM
+npm-debug.log
+
+# Drush 9 Checksums
+drush/sites/.checksums
+
+# Deprecation detector rules
+.rules
+
+# Ignore certificates directory. This has to created manually on server.
+certificates/
+
+# BLT 11.2.0 update to support simulated deploys
+/travis_wait*
+
