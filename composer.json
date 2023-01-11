@@ -12,13 +12,18 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
         "composer/installers": "^2.0",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
-        "drupal/core-recommended": "^10.0"
+        "drupal/core-recommended": "^10.0",
+        "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
         "drush/drush": "^11.0"
@@ -28,6 +33,9 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "autoload": {
+        "files": ["load.environment.php"]
+    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
@@ -36,7 +44,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "process-timeout": 2000
     },
     "extra": {
         "drupal-scaffold": {
