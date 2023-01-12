@@ -27,7 +27,7 @@
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
-        "drush/drush": "^11.0"
+        "drush/drush": "^11.3"
     },
     "conflict": {
         "drupal/drupal": "*"
