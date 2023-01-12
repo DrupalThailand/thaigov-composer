@@ -1,19 +1,19 @@
 version: "3.7"
 # Use docker template form https://github.com/wodby/docker4drupal
 services:
-  mariadb:
-    image: wodby/mariadb:10.9
-    container_name: "thaigov_mariadb"
-    stop_grace_period: 30s
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
-    volumes:
-      - ./db/mariadb/data:/var/lib/mysql # Use bind mount
-    networks:
-        - thaigov_link
+  # mariadb:
+  #   image: wodby/mariadb:10.9
+  #   container_name: "thaigov_mariadb"
+  #   stop_grace_period: 30s
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: drupal
+  #     MYSQL_USER: drupal
+  #     MYSQL_PASSWORD: drupal
+  #   volumes:
+  #     - ./db/mariadb/data:/var/lib/mysql # Use bind mount
+  #   networks:
+  #       - thaigov_link
   php:
     image: wodby/drupal-php:8.1
     container_name: "thaigov_php"
@@ -25,6 +25,8 @@ services:
   nginx:
     image: wodby/nginx:1.23
     container_name: "thaigov_nginx"
+    ports:
+      - 8077:80
     depends_on:
     - php
     environment:
