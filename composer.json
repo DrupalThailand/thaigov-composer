@@ -34,9 +34,6 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "autoload": {
-        "files": ["load.environment.php"]
-    },
     "config": {
         "allow-plugins": {
             "composer/installers": true,
@@ -48,19 +45,31 @@
         "sort-packages": true,
         "process-timeout": 2000
     },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": ["load.environment.php"]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalThaiGovProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalThaiGovProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalThaiGovProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalThaiGovProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "file-mapping": {
-                "[web-root]/sites/default/default.settings.php": "assets/sites/default/default.settings.php",
-                "[web-root]/sites/default/settings.php": {
-                  "path": "assets/sites/default/settings.php",
-                  "overwrite": false
-                },
-                "[web-root]/.htaccess": false
-              }
+            }
         },
         "installer-paths": {
             "web/core": [
