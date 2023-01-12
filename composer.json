@@ -26,7 +26,7 @@
         "drupal/core-recommended": "^10.0.0",
         "thaigov/thaigov": "2.0.x-dev",
         "drush/drush": "^11.4.0",
-        "vlucas/phpdotenv": "^5.1",
+        "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -40,6 +40,7 @@
     "config": {
         "discard-changes": true,
         "sort-packages": true,
+        "process-timeout": 2000,
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
@@ -92,12 +93,33 @@
             ]
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
