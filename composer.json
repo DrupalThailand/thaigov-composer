@@ -52,7 +52,15 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            }
+            },
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": "assets/sites/default/default.settings.php",
+                "[web-root]/sites/default/settings.php": {
+                  "path": "assets/sites/default/settings.php",
+                  "overwrite": false
+                },
+                "[web-root]/.htaccess": false
+              }
         },
         "installer-paths": {
             "web/core": [
@@ -100,10 +108,5 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "php -r \"copy('web/sites/default/default.settings.php', 'web/sites/default/default.settings.php');\""
-        ]
     }
 }
