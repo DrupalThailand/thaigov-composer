@@ -100,5 +100,10 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"copy('web/sites/default/default.settings.php', 'web/sites/default/default.settings.php');\""
+        ]
     }
 }
