@@ -23,6 +23,7 @@
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "thaigov/thaigov" : "2.0.x-dev",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
@@ -31,7 +32,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "files": ["load.environment.php"]
