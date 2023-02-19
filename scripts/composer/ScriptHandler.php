@@ -36,6 +36,24 @@ class ScriptHandler {
       }
     }
 
+    // Create the files directory settings with chmod 0755
+    if (!$fs->exists($drupalRoot . '/sites/default/settings')) {
+      $oldmask = umask(0);
+      $fs->mkdir($drupalRoot . '/sites/default/settings', 0755);
+      umask($oldmask);
+      $event->getIO()->write("Created a sites/default/settings directory with chmod 0755");
+    }
+     // Create the files settings with chmod 0666
+    if (!$fs->exists($drupalRoot . '/sites/default/settings/settings.local.php')) {
+      $fs->copy('scripts/files/settings.local.php', $drupalRoot . '/sites/default/settings/settings.local.php');
+      $fs->chmod($drupalRoot . '/sites/default/settings/settings.local.php', 0666);
+      $event->getIO()->write("Created a sites/default/settings/settings.local.php directory with chmod 0666");
+    }
+    if (!$fs->exists($drupalRoot . 'sites/default/settings.php')) {
+      $fs->copy('scripts/files/settings.php', $drupalRoot . '/sites/default/settings.php');
+      $fs->chmod($drupalRoot . '/sites/default/settings.php', 0666);
+      $event->getIO()->write("Created a sites/default/settings.php file with chmod 0666");
+    }
     // Prepare the settings file for installation
     if (!$fs->exists($drupalRoot . '/sites/default/settings.php') && $fs->exists($drupalRoot . '/sites/default/default.settings.php')) {
       $fs->copy($drupalRoot . '/sites/default/default.settings.php', $drupalRoot . '/sites/default/settings.php');
