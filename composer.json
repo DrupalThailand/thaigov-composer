@@ -24,7 +24,6 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^10.0.0",
         "drupal/core-recommended": "^10.0.0",
-        "drupal/text_resize": "^1.3",
         "drush/drush": "^11.4.0",
         "thaigov/thaigov": "2.0.x-dev",
         "vlucas/phpdotenv": "^2.4",
