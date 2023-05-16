@@ -30,7 +30,8 @@
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.0.0"
+        "drupal/core-dev": "^10.0.0",
+        "phpro/grumphp-shim": "^1.16"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -47,7 +48,8 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "phpro/grumphp-shim": true
         }
     },
     "autoload": {
