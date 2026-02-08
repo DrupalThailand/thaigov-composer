@@ -8,6 +8,8 @@ web/modules/contrib
 web/themes/contrib
 web/profiles/contrib
 composer.lock
+db/mariadb/data
+web/modules/custom
 
 # Ignore Drupal's file directory
 web/sites/default/files
@@ -42,3 +44,4 @@ web/sites/*.dd
 
 # Ignore .env files as they are personal
 /.env
+web/adminer.php

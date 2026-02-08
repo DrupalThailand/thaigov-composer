@@ -1,1 +1,0 @@
-For Databases Dcoker.

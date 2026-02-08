@@ -24,9 +24,10 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^10.0.0",
         "drupal/core-recommended": "^10.0.0",
-        "drush/drush": "^11.4.0",
+        "drupal/twig_tweak": "^3.4",
+        "drush/drush": "^12.4.3",
         "thaigov/thaigov": "2.0.x-dev",
-        "vlucas/phpdotenv": "^2.4",
+        "vlucas/phpdotenv": "^5.4.0",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
@@ -45,11 +46,13 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true,
+            "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpro/grumphp-shim": true
+            "php-http/discovery": true,
+            "phpro/grumphp-shim": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         }
     },
     "autoload": {
